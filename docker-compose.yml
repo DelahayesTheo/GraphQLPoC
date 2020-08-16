@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  node:
+    build: ./
+    container_name: node
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./:/opt/app/"
+    networks:
+      - graphQLPoC
+
+networks:
+  graphQLPoC:
+    driver: bridge
